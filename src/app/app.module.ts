@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PagesComponent } from './pages/pages.component';
 import { HomeComponent } from './home/home.component';
 
 import { LayoutBodyComponent } from './layout/body/body.component';
@@ -14,16 +13,16 @@ import { LayoutContentComponent } from './layout/layout-content/layout-content.c
 import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
 import { MenuComponent } from './layout/menu/menu.component';
 
+
 const appRoutes : Routes = [
-  {path: "pages", component: PagesComponent },
   {path: 'home', component: HomeComponent},
+  {path: "pages", loadChildren: 'app/pages/pages.module#PagesModule' },
   {path:'', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagesComponent,
     HomeComponent,
     LayoutBodyComponent,
     LayoutHeadComponent,
