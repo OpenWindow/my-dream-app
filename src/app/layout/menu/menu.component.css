@@ -10,8 +10,9 @@
     text-decoration: none; /* Remove underline from links */
 }
 
-.vertical-menu a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
+.vertical-menu a:hover:not(.active) {
+    background-color: #555;
+    color: white;
 }
 
 .vertical-menu a.active {
