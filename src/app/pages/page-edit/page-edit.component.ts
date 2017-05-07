@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MdButton, MdDialog, MdDialogRef } from '@angular/material';
-import { ModuleDefListComponent } from '../module-def-list/module-def-list.component';
+import { ModuleDefListComponent } from '../../module-def-list/module-def-list.component';
+import { ModuleDefsService } from '../../module-def-list/module-defs.service';
 
 @Component({
   selector: 'app-page-edit',
@@ -10,8 +11,10 @@ import { ModuleDefListComponent } from '../module-def-list/module-def-list.compo
 })
 export class PageEditComponent implements OnInit {
   selectedOption: string;
+  result: any;
   constructor(private router: Router,
-              private dialog: MdDialog) { }
+              private dialog: MdDialog,
+              private moduleDefService: ModuleDefsService) { }
 
   ngOnInit() {
   }
@@ -21,10 +24,9 @@ export class PageEditComponent implements OnInit {
   }
 
   openModuleDef(){
-    let dialogRef = this.dialog.open(ModuleDefListComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      this.selectedOption = result;
-    });
+      this.moduleDefService
+      .showModuleDefs('Confirm Dialog', 'Are you sure you want to do this?')
+      .subscribe(res => this.result = res);
   }
 
 }
