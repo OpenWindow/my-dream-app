@@ -25,7 +25,7 @@ export class PageEditComponent implements OnInit {
 
   openModuleDef(){
       this.moduleDefService
-      .showModuleDefs('Confirm Dialog', 'Are you sure you want to do this?')
+      .showModuleDefs('Module Definitions', 'Click on a module to add it to page')
       .subscribe(res => this.result = res);
   }
 

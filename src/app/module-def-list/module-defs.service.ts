@@ -10,7 +10,10 @@ export class ModuleDefsService {
 
   showModuleDefs(title:string, message:string): Observable<boolean>{
     let dialogRef: MdDialogRef<ModuleDefListComponent>;
-    dialogRef = this.dialog.open(ModuleDefListComponent);
+    dialogRef = this.dialog.open(ModuleDefListComponent, 
+      { height: '400px', 
+        width: '600px'
+      });
     dialogRef.componentInstance.title = title;
     dialogRef.componentInstance.message = message;
     return dialogRef.afterClosed();

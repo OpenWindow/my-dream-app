@@ -1,6 +1,20 @@
-<p>{{ title }}</p>
-        <p>{{ message }}</p>
-        <button type="button" md-raised-button 
-            (click)="dialogRef.close(true)">OK</button>
-        <button type="button" md-button 
-            (click)="dialogRef.close()">Cancel</button>
+<h4>{{ title }}</h4>
+<p>{{ message }}</p>
+<div class="row">
+    <div class="col-sm-3">
+        Row
+    </div>
+    <div class="col-sm-3">
+        Column
+    </div>
+    <div class="col-sm-3">
+        Horizontal Line
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"></div>
+</div>
+<button type="button" md-raised-button (click)="dialogRef.close(true)">OK</button>
+<button type="button" md-button (click)="dialogRef.close()">Cancel</button>
